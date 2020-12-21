@@ -131,7 +131,7 @@ def test_auth_register_lastname_morethan50(url):
 # test the return value for auth_register
 def test_auth_register_return_types(url):
     resp_register = requests.post(url + 'auth/register', json={
-        'email': 'ironman007@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'ironisgood',
         'name_first': 'Iron',
         'name_last': 'Man'
@@ -145,28 +145,28 @@ def test_auth_register_return_types(url):
 def test_auth_register_handle(url):
     # register 2 user with same name
     resp1_register = requests.post(url + 'auth/register', json={
-        'email': 'boyu1@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyu_pass',
         'name_first': 'Boyu',
         'name_last': 'Cai'
     })
     resp2_register = requests.post(url + 'auth/register', json={
-        'email': 'boyu2@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyu_pass',
         'name_first': 'Boyu',
         'name_last': 'Cai'
     })
     # register another 2 users with same name and longer than 20
     resp3_register = requests.post(url + 'auth/register', json={
-        'email': 'boyu3@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyu_pass',
         'name_first': 'Boyu',
         'name_last': 'Caiiiiiiiiiiiiiiiiii'
     })
     resp4_register = requests.post(url + 'auth/register', json={
-        'email': 'boyu4@gmail.com',
-        'password': 'boyu_pass',
-        'name_first': 'Boyu',
+        'email': 'Yourmail@mail.com',
+        'password': 'Yourmail@mail.com',
+        'name_first': 'Yourmail@mail.com',
         'name_last': 'Caiiiiiiiiiiiiiiiiii'
     })
     user1 = json.loads(resp1_register.text)
@@ -210,7 +210,7 @@ def test_auth_register_handle(url):
 def test_auth_login_return_type(url):
     # register
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -264,7 +264,7 @@ def test_auth_login_email_not_valid(url):
 def test_auth_login_email_not_match(url):
     # register an user
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -273,7 +273,7 @@ def test_auth_login_email_not_match(url):
     # login with a wrong password
     with pytest.raises(requests.exceptions.HTTPError):
         requests.post(url + 'auth/login', json={
-            'email': 'cbyissac@gmail.com',
+            'email': 'Yourmail@mail.com',
             'password': 'boyupass'
         }).raise_for_status()
 
@@ -282,7 +282,7 @@ def test_auth_login_email_not_match(url):
 def test_auth_login_password_incorrect(url):
     # register an user
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -291,7 +291,7 @@ def test_auth_login_password_incorrect(url):
     # login with a wrong password
     with pytest.raises(requests.exceptions.HTTPError):
         requests.post(url + 'auth/login', json={
-            'email': 'cbyisaac@gmail.com',
+            'email': 'Yourmail@mail.com',
             'password': 'xukunpass'
         }).raise_for_status()
 
@@ -319,7 +319,7 @@ def test_auth_logout_invalid_token(url):
 # test the case that email is invalid for passwordreset request
 def test_passwordreset_request_email_invalid(url):
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': 'Yourmail@mail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -331,7 +331,7 @@ def test_passwordreset_request_email_invalid(url):
         }).raise_for_status()
     with pytest.raises(requests.exceptions.HTTPError):
         requests.post(url + 'auth/passwordreset/request', json={
-            'email': 'cbyissac@gmail.com'
+            'email': 'Yourmail@mail.com'
         }).raise_for_status()
     with pytest.raises(requests.exceptions.HTTPError):
         requests.post(url + 'auth/passwordreset/request', json={

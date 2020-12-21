@@ -143,9 +143,9 @@ def test_auth_login_reture_type():
 # test the case logout with valid token
 def test_auth_logout_valid_token():
     clear()
-    weiqiang_token = auth_register('weiqiang.zhuang1@gmail.com',
+    weiqiang_token = auth_register('Yourmail@mail.com',
                                    'weiqiangpass1', 'Weiqiang1', 'Zhuang1')
-    auth_login("weiqiang.zhuang1@gmail.com", "weiqiangpass1")
+    auth_login("Yourmail@mail.com", "weiqiangpass1")
     assert auth_logout(weiqiang_token['token'])['is_success'] is True
 
 
@@ -159,9 +159,9 @@ def test_auth_logout_invalid_token():
 # logout the same person 2 times
 def test_auth_logout_2times():
     clear()
-    weiqiang_token = auth_register('weiqiang.zhuang1@gmail.com',
+    weiqiang_token = auth_register('Yourmail@mail.com',
                                    'weiqiangpass1', 'Weiqiang1', 'Zhuang1')
-    auth_login("weiqiang.zhuang1@gmail.com", "weiqiangpass1")
+    auth_login("Yourmail@mail.com", "weiqiangpass1")
     auth_logout(weiqiang_token['token'])
     assert auth_logout(weiqiang_token['token'])['is_success'] is False
 
@@ -169,10 +169,10 @@ def test_auth_logout_2times():
 # test login after register and logout
 def test_not_login_before():
     clear()
-    weiqiang_token = auth_register('weiqiang.zhuang1@gmail.com',
+    weiqiang_token = auth_register('Yourmail@mail.com',
                                    'weiqiangpass1', 'Weiqiang1', 'Zhuang1')
     auth_logout(weiqiang_token['token'])
-    return_value = auth_login("weiqiang.zhuang1@gmail.com", "weiqiangpass1")
+    return_value = auth_login("Yourmail@mail.com", "weiqiangpass1")
     assert return_value['token'] == weiqiang_token['token']
     
 

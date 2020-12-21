@@ -6,12 +6,12 @@ from other import clear
 
 def initialise_data():
     clear()
-    boyu_dict = auth_register('cbyisaac@gmail.com', 'boyupass', 'Boyu', 'Cai')
-    wenyao_dict = auth_register('wenyaochen427@gmail.com', 'wenyaopass', 'Wenyao', 'Chen')
-    weiqiang_dict = auth_register('weiqiangzhuang24@gmail.com', 'weiqiangpass',
+    boyu_dict = auth_register('Yourmail@mail.com', 'boyupass', 'Boyu', 'Cai')
+    wenyao_dict = auth_register('Yourmail@mail.com', 'wenyaopass', 'Wenyao', 'Chen')
+    weiqiang_dict = auth_register('Yourmail@mail.com', 'weiqiangpass',
                                   'Weiqiang', 'Zhuang')
-    yixuan_dict = auth_register('yison517@gmail.com', 'yixuanpass', 'Yixuan', 'Chen')
-    yuhan_dict = auth_register('yuhan.liang1021@gmail.com', 'yuhanpass', 'Yuhan', 'Liang')
+    yixuan_dict = auth_register('Yourmail@mail.com', 'yixuanpass', 'Yixuan', 'Chen')
+    yuhan_dict = auth_register('Yourmail@mail.com', 'yuhanpass', 'Yuhan', 'Liang')
     return boyu_dict, wenyao_dict, weiqiang_dict, yixuan_dict, yuhan_dict
 
 # test the case that token is invalid for channels create
