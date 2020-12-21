@@ -16,8 +16,8 @@
 ## Project
 |Iteration|Grade|
 |--|--|
-|Iteration1|94.2|
-|Iteration2|96.5|
+|Iteration1|94.2/100|
+|Iteration2|96.5/100|
 |Iteration3|118/120|
 |Bonus|Not issued|
 |Total|100/100|
