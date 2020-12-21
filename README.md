@@ -1,7 +1,7 @@
 # 2020T3 COMP1531 thu13grape1	
 
 ## Lab
-
+|Lab|Grade|
 |-|-|
 |Lab01|A+|
 |Lab02|A+|
@@ -14,7 +14,7 @@
 |Total|15.8/16|
 
 ## Project
-
+|Iteration|Grade|
 |--|--|
 |Iteration1|94.2|
 |Iteration2|96.5|
